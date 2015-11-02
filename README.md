@@ -28,9 +28,9 @@ Sub-routines
 
 Subroutines are called from 'csi_read_tob1.pro' and 'csi_read_toa5.pro'
 
-* csi_header.pro - reads the header of TOB1 and TOA5 files
-* csi_fs2.pro - determines file types
-* csi_doy2dat.pro - date handling
-* csi_months.pro - date handling
-* csi_leapyear.pro - date handling
-
+* csi_check_tagnames.pro - ensures illegal characters and spaces are removed or replaced.
+* csi_header.pro - reads the header of TOB1 and TOA5 files.
+* csi_fs2.pro - determines file types.
+* csi_doy2dat.pro - date handling.
+* csi_months.pro - date handling.
+* csi_leapyear.pro - date handling.
