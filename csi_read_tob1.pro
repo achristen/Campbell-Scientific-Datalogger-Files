@@ -32,7 +32,7 @@
 ;  #csi_tob_datatypes#
 ;  #csi_fs2#
 ;  #csi_header#
-;  #tls_check_tagnames#
+;  #csi_check_tagnames#
 ;
 ; reference:
 ;   jon trauntvein, 'campbell scientific data file formats', version 1.1.1.10
@@ -90,7 +90,7 @@ function csi_read_tob1, file, header=header, julian=julian
   ;# creating output structure              #
   ;##########################################
 
-  tag_names = tls_check_tagnames(header.field_names)
+  tag_names = csi_check_tagnames(header.field_names)
   data = create_struct(tag_names[0],replicate(csi_tob_datatypes(header.data_types[0],/equivalent),n_rec))
   for i=1l, n_cols-1 do begin
    data  = create_struct(data,tag_names[i],replicate(csi_tob_datatypes(header.data_types[i],/equivalent),n_rec))

@@ -29,7 +29,7 @@
 ;
 ; subroutines:
 ;  #csi_header#
-;  #tls_check_tagnames#
+;  #csi_check_tagnames#
 ;
 ; reference:
 ;   jon trauntvein, 'campbell scientific data file formats', version 1.1.1.10
@@ -90,7 +90,7 @@ function csi_read_toa5, file, header=header, julian=julian
   ;# creating output structure              #
   ;##########################################
 
-  tag_names = tls_check_tagnames(header.field_names)
+  tag_names = csi_check_tagnames(header.field_names)
   
   if ((strlowcase(tag_names[0]) eq 'timestamp') or (strlowcase(header.field_units[0]) eq 'text')) then default='' else default=!values.f_nan
   data = create_struct(tag_names[0],replicate(default,n_rec))
